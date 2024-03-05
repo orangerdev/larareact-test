@@ -179,6 +179,35 @@ docker build -t larareact .
 
 https://underground.works/clockwork/#docs-installation
 
+# Install image compress
+
+```bash
+composer require spatie/image
+```
+
+# Queue
+
+```bash
+composer require predis/predis
+```
+
+```bash
+php artisan make:job Tele
+```
+
+```bash
+php artisan queue:table
+```
+
+```bash
+php artisan migrate
+```
+
+```bash
+php artisan queue:work
+```
+
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
