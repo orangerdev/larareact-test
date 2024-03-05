@@ -6,7 +6,6 @@ import { addEmail } from "../States/form/formAction";
 const Form = (props) => {
     const dispatch = useDispatch();
     const email = useSelector((state) => state.form.email);
-    console.log(props);
 
     const { data, setData, post, errors } = useForm({
         name: "",
@@ -34,6 +33,7 @@ const Form = (props) => {
                         onChange={(e) => setData("name", e.target.value)}
                         required
                     />
+                    {errors.name && <div>{errors.name}</div>}
                 </div>
                 <div className="formGroup">
                     <label htmlFor="email">Email: </label>
@@ -45,6 +45,7 @@ const Form = (props) => {
                         onChange={(e) => setData("email", e.target.value)}
                         required
                     />
+                    {errors.email && <div>{errors.email}</div>}
                 </div>
                 <div className="formGroup">
                     <label htmlFor="password">Password: </label>
@@ -56,6 +57,7 @@ const Form = (props) => {
                         onChange={(e) => setData("password", e.target.value)}
                         required
                     />
+                    {errors.password && <div>{errors.password}</div>}
                 </div>
                 <div className="formGroup">
                     <button className="count_btn" type="Submit">

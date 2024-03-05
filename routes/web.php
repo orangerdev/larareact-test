@@ -53,15 +53,15 @@ Route::get('siswa/{id}', [Form::class, 'siswa'])->name('siswa.get');
 // WS
 Route::get('/status', [Websocket::class, 'status']);
 
-Route::post('form', [Form::class,'store'])->name('form.create');
+Route::post('form', [Form::class, 'store'])->name('form.create');
 
-Route::get('/broadcast',function(){
+Route::get('/broadcast', function () {
 
     broadcast(new Hello());
     return "Event has been sent!";
 });
 
-Route::get('/broadcastPrivate',function(){
+Route::get('/broadcastPrivate', function () {
     $user = App\Models\User::find(5);
     broadcast(new PrivateTest($user));
     return "Event has been sent!";
@@ -79,4 +79,4 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/post', [PostController::class, 'index'])->middleware([])->name('post');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
